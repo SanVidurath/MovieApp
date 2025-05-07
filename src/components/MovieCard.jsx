@@ -1,5 +1,7 @@
 import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function MovieCard({ movie }) {
   const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext();
@@ -23,7 +25,7 @@ function MovieCard({ movie }) {
             className={`favorite-btn ${favorite ? "active" : ""}`}
             onClick={onFavoriteClick}
           >
-            🤍
+            <FontAwesomeIcon icon={faHeart}/>
           </button>
         </div>
       </div>
